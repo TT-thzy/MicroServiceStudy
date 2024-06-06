@@ -1,0 +1,13 @@
+server:
+  port: 8005 #运行端口号
+  servlet:
+    context-path: /eureka-client
+spring:
+  application:
+    name: eureka-client #服务名称
+eureka:
+  client:
+    register-with-eureka: true #注册到Eureka的注册中心
+    fetch-registry: true #获取注册实例列表
+    service-url:
+      defaultZone: http://replica1:8003/eureka-server/eureka,http://replica2:8004/eureka-server/eureka #配置注册中心地址(注意: 资源路径定死的`/eureka`)
